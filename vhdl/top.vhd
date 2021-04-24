@@ -1,23 +1,25 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.imucam_pkg.all;
 
 entity top is
   port (
     clk : in std_logic;
-    output : out std_logic_vector(7 downto 0)
+    input : in std_logic_2d(8 downto 0)(3 downto 0);
+    output : out std_logic_vector(3 downto 0)
   );
 end top;
 
 architecture rtl of top is
-  signal counter : unsigned(7 downto 0);
 begin
-  output <= std_logic_vector(counter);
-
-  process (clk)
-  begin
-    if rising_edge(clk) then
-      counter <= counter + 1;
-    end if;
-  end process;
+  summation : entity work.summation_tree
+    generic map (
+      use_signed => false
+    )
+    port map (
+      clk => clk,
+      input => input,
+      output => output
+    );
 end rtl;
