@@ -10,11 +10,22 @@ entity adder_tree is
   port (
     clk : in std_logic;
     input : in std_logic_2d;
-    output : out std_logic_vector
+    input_valid : in std_logic;
+    output : out std_logic_vector;
+    output_valid : out std_logic
   );
 end entity;
 
 architecture rtl of adder_tree is
+  function resize(x : std_logic_vector; new_size : natural) return std_logic_vector is
+  begin
+    if use_signed then
+      return std_logic_vector(resize(signed(x), new_size));
+    else
+      return std_logic_vector(resize(unsigned(x), new_size));
+    end if;
+  end function;
+
   function add(x : std_logic_vector; y : std_logic_vector) return std_logic_vector is
   begin
     if use_signed then
@@ -28,9 +39,15 @@ architecture rtl of adder_tree is
   constant num_partials : natural := 2 ** depth;
   
   signal partials : std_logic_3d(depth downto 0)(num_partials-1 downto 0)(output'range);
+  signal valids : std_logic_vector(depth downto 0);
 begin
-  partials(0)(input'length-1 downto 0) <= input;
-  partials(0)(num_partials-1 downto input'length) <= (others => (others => '0'));
+  process (all)
+  begin
+    for i in 0 to input'length-1 loop
+      partials(0)(i) <= resize(input(input'low + i), output'length);
+    end loop;
+    partials(0)(num_partials-1 downto input'length) <= (others => (others => '0'));
+  end process;
 
   process (clk)
   begin
@@ -44,4 +61,17 @@ begin
   end process;
   
   output <= partials(depth)(0);
+  
+  valids(0) <= input_valid;
+  
+  process (clk)
+  begin
+    if rising_edge(clk) then
+      for level in 0 to depth-1 loop
+        valids(level+1) <= valids(level);
+      end loop;
+    end if;
+  end process;
+  
+  output_valid <= valids(depth);
 end rtl;
