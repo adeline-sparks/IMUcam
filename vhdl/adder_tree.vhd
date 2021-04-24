@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.imucam_pkg.all;
 
-entity summation_tree is
+entity adder_tree is
   generic (
     use_signed : boolean
   );
@@ -14,7 +14,7 @@ entity summation_tree is
   );
 end entity;
 
-architecture rtl of summation_tree is
+architecture rtl of adder_tree is
   function add(x : std_logic_vector; y : std_logic_vector) return std_logic_vector is
   begin
     if use_signed then

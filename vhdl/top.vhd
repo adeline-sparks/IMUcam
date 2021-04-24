@@ -13,7 +13,7 @@ end top;
 
 architecture rtl of top is
 begin
-  summation : entity work.summation_tree
+  summation : entity work.adder_tree
     generic map (
       use_signed => false
     )
