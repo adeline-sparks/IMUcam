@@ -16,7 +16,7 @@ end top;
 
 architecture rtl of top is
 begin
-  sobel : entity work.sobel
+  sobel_kernel : entity work.sobel_kernel
     port map (
       clk => clk,
       input => input,

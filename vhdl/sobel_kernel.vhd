@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.imucam_pkg.all;
 
-entity sobel is
+entity sobel_kernel is
   port (
     clk : in std_logic;
     input : in unsigned_2d(2 downto 0)(2 downto 0);
@@ -14,9 +14,9 @@ entity sobel is
   );
 begin
   assert output_x'length = output_y'length;
-end sobel;
+end sobel_kernel;
 
-architecture rtl of sobel is
+architecture rtl of sobel_kernel is
   constant input_length : natural := input(0)(0)'length;
   constant output_length : natural := output_x'length;
   constant addends_length : natural := minimum(input_length + 2, output_length);
