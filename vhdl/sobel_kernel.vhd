@@ -18,8 +18,7 @@ end sobel_kernel;
 
 architecture rtl of sobel_kernel is
   constant input_length : natural := input(0)(0)'length;
-  constant output_length : natural := output_x'length;
-  constant addends_length : natural := minimum(input_length + 2, output_length);
+  constant addends_length : natural := input_length + 2;
   
   signal input_signed : signed_2d(2 downto 0)(2 downto 0)(addends_length-1 downto 0);
   signal x_addends : signed_1d(5 downto 0)(addends_length-1 downto 0);

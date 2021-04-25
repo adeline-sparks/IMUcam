@@ -17,14 +17,49 @@ entity harris_tensor is
 end harris_tensor;
 
 architecture rtl of harris_tensor is
+  signal temp_xx : signed(input_x'length * 2 - 1 downto 0);
+  signal temp_xy : signed(input_x'length + input_y'length - 1 downto 0);
+  signal temp_yy : signed(input_y'length * 2 - 1 downto 0);
+  signal temp_valid : std_logic;
 begin
+  assert input_x'length = input_y'length;
+  assert output_xx'length = output_xy'length;
+  assert output_xx'length = output_yy'length;
+
   process (clk) is
   begin
     if rising_edge(clk) then
-      output_xx <= truncate_fractional(input_x * input_x, output_xx'length);
-      output_xy <= truncate_fractional(input_x * input_y, output_xy'length);
-      output_yy <= truncate_fractional(input_y * input_y, output_yy'length);
-      output_valid <= input_valid;
+      temp_xx <= input_x * input_x;
+      temp_xy <= input_x * input_y;
+      temp_yy <= input_y * input_y;
+      temp_valid <= input_valid;
     end if;
   end process;
+  
+  round_xx : entity work.round
+    port map (
+      clk => clk,
+      input => temp_xx,
+      input_valid => temp_valid,
+      output => output_xx,
+      output_valid => output_valid
+    );
+    
+  round_xy : entity work.round
+    port map (
+      clk => clk,
+      input => temp_xy,
+      input_valid => temp_valid,
+      output => output_xx,
+      output_valid => open
+    );
+    
+  round_yy : entity work.round
+    port map (
+      clk => clk,
+      input => temp_yy,
+      input_valid => temp_valid,
+      output => output_xx,
+      output_valid => open
+    );
 end rtl;

@@ -48,6 +48,12 @@ begin
     end if;
   end process;
   
-  output <= truncate_fractional(partials(depth)(0), output'length);
-  output_valid <= valids(depth);
+  round : entity work.round
+    port map (
+      clk => clk,
+      input => partials(depth)(0),
+      input_valid => valids(depth),
+      output => output,
+      output_valid => output_valid
+    );
 end rtl;
