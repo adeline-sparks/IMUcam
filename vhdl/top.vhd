@@ -6,7 +6,7 @@ use work.imucam_pkg.all;
 entity top is
   port (
     clk : in std_logic;
-    input : in std_logic_2d(8 downto 0)(3 downto 0);
+    input : in std_logic_vector_1d(8 downto 0)(3 downto 0);
     input_valid : std_logic;
     output : out std_logic_vector(7 downto 0);
     output_valid : out std_logic

@@ -9,7 +9,7 @@ entity adder_tree is
   );
   port (
     clk : in std_logic;
-    input : in std_logic_2d;
+    input : in std_logic_vector_1d;
     input_valid : in std_logic;
     output : out std_logic_vector;
     output_valid : out std_logic
@@ -38,7 +38,7 @@ architecture rtl of adder_tree is
   constant depth : natural := log2(input'length);
   constant num_partials : natural := 2 ** depth;
   
-  signal partials : std_logic_3d(depth downto 0)(num_partials-1 downto 0)(output'range);
+  signal partials : std_logic_vector_2d(depth downto 0)(num_partials-1 downto 0)(output'range);
   signal valids : std_logic_vector(depth downto 0);
 begin
   process (all)
