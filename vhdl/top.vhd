@@ -6,23 +6,27 @@ use work.imucam_pkg.all;
 entity top is
   port (
     clk : in std_logic;
-    input : in unsigned_2d(2 downto 0)(2 downto 0)(3 downto 0);
+    input_x : in signed(3 downto 0);
+    input_y : in signed(3 downto 0);
     input_valid : in std_logic;
-    output_x : out signed(6 downto 0);
-    output_y : out signed(6 downto 0);
+    output_xx : out signed(3 downto 0);
+    output_xy : out signed(3 downto 0);
+    output_yy : out signed(3 downto 0);
     output_valid : out std_logic
   );
 end top;
 
 architecture rtl of top is
 begin
-  sobel_kernel : entity work.sobel_kernel
+  harris_tensor : entity work.harris_tensor
     port map (
       clk => clk,
-      input => input,
+      input_x => input_x,
+      input_y => input_y,
       input_valid => input_valid,
-      output_x => output_x,
-      output_y => output_y,
+      output_xx => output_xx,
+      output_xy => output_xy,
+      output_yy => output_yy,
       output_valid => output_valid
     );
 end rtl;
