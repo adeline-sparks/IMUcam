@@ -1,4 +1,5 @@
 vhdl/db
 vhdl/incremental_db
 vhdl/output_files
+vhdl/simulation
 *.qws
