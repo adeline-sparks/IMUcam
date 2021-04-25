@@ -14,11 +14,32 @@ package imucam_pkg is
   type unsigned_2d is array(natural range <>) of unsigned_1d;
   
   function log2(x : positive) return natural;
+  
+  function minimum(x : natural; y : natural) return natural;
+  function maximum(x : natural; y : natural) return natural;
 end imucam_pkg;
 
 package body imucam_pkg is
   function log2(x : positive) return natural is
   begin
     return natural(ceil(log2(real(x))));
+  end function;
+  
+  function minimum(x : natural; y : natural) return natural is
+  begin
+    if x < y then
+      return x;
+    else
+      return y;
+    end if;
+  end function;
+  
+  function maximum(x : natural; y : natural) return natural is
+  begin
+    if x > y then
+      return x;
+    else
+      return y;
+    end if;
   end function;
 end package body;

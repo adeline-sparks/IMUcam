@@ -11,6 +11,8 @@ entity adder_tree is
     output : out signed;
     output_valid : out std_logic
   );
+begin
+  assert output'length >= input(input'low)'length;
 end entity;
 
 architecture rtl of adder_tree is
