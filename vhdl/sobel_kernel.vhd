@@ -53,16 +53,16 @@ begin
   x_adder_tree : entity work.adder_tree
     port map (
       clk => clk,
-      input => x_addends,
-      input_valid => input_valid,
+      inputs => x_addends,
+      inputs_valid => input_valid,
       output => output_x,
       output_valid => output_valid);
     
   y_adder_tree : entity work.adder_tree
     port map (
       clk => clk,
-      input => y_addends,
-      input_valid => input_valid,
+      inputs => y_addends,
+      inputs_valid => input_valid,
       output => output_y,
       output_valid => open);
 end rtl;
