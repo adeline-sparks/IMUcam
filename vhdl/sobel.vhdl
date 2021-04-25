@@ -24,7 +24,6 @@ architecture rtl of sobel is
   signal input_signed : signed_2d(2 downto 0)(2 downto 0)(addends_length-1 downto 0);
   signal x_addends : signed_1d(5 downto 0)(addends_length-1 downto 0);
   signal y_addends : signed_1d(5 downto 0)(addends_length-1 downto 0);
-  signal addends_valid : std_logic;
 begin
   process (all) is
   begin
@@ -35,32 +34,27 @@ begin
     end loop;
   end process;
 
-  process (clk) is
-  begin
-    if rising_edge(clk) then
-      x_addends <= (
-        input_signed(0)(0),
-        -input_signed(0)(2),
-        shift_left(input_signed(1)(0), 1),
-        -shift_left(input_signed(1)(2), 1),
-        input_signed(2)(0),
-        -input_signed(2)(2));
-      y_addends <= (
-        input_signed(0)(0),
-        -input_signed(2)(0),
-        shift_left(input_signed(0)(1), 1),
-        -shift_left(input_signed(2)(1), 1),
-        input_signed(0)(2),
-        -input_signed(2)(2));
-      addends_valid <= input_valid;
-    end if;
-  end process;
+  x_addends <= (
+    input_signed(0)(0),
+    -input_signed(0)(2),
+    shift_left(input_signed(1)(0), 1),
+    -shift_left(input_signed(1)(2), 1),
+    input_signed(2)(0),
+    -input_signed(2)(2));
+  y_addends <= (
+    input_signed(0)(0),
+    -input_signed(2)(0),
+    shift_left(input_signed(0)(1), 1),
+    -shift_left(input_signed(2)(1), 1),
+    input_signed(0)(2),
+    -input_signed(2)(2));
+ 
     
   x_adder_tree : entity work.adder_tree
     port map (
       clk => clk,
       input => x_addends,
-      input_valid => addends_valid,
+      input_valid => input_valid,
       output => output_x,
       output_valid => output_valid);
     
@@ -68,7 +62,7 @@ begin
     port map (
       clk => clk,
       input => y_addends,
-      input_valid => addends_valid,
+      input_valid => input_valid,
       output => output_y,
       output_valid => open);
 end rtl;
