@@ -12,8 +12,6 @@ entity sobel_kernel is
     output_y : out signed;
     output_valid : out std_logic
   );
-begin
-  assert output_x'length = output_y'length;
 end sobel_kernel;
 
 architecture rtl of sobel_kernel is

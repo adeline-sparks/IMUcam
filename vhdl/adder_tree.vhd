@@ -37,6 +37,7 @@ begin
   begin
     if rising_edge(clk) then
       for level in 0 to depth-1 loop
+        partials(level+1) <= (others => (others => '0'));
         for i in 0 to 2**(depth-level-1)-1 loop
           partials(level+1)(i)(input_length+level downto 0) <= 
             resize(partials(level)(i*2)(input_length+level-1 downto 0), input_length+level+1) +
