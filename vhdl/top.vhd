@@ -5,24 +5,35 @@ use work.imucam_pkg.all;
 
 entity top is
   port (
+    hispi_clk : in diff_pair;
+    hispi_data : in diff_pair_vector(3 downto 0);
+    
     clk : in std_logic;
-    input : in unsigned_2d(2 downto 0)(2 downto 0)(3 downto 0);
-    input_valid : in std_logic;
-    output_x : out signed(6 downto 0);
-    output_y : out signed(6 downto 0);
-    output_valid : out std_logic
+    output : out std_logic_vector(11 downto 0);
+    output_flags : out pixel_flags
   );
 end top;
 
 architecture rtl of top is
 begin
-  sobel_kernel : entity work.sobel_kernel
+  hispi : entity work.hispi
+    generic map (
+      max_word_length => 12,
+      max_row_length => 5000,
+      max_frame_length => 5000,
+      max_num_lanes => 4
+    )
     port map (
-      clk => clk,
-      input => input,
-      input_valid => input_valid,
-      output_x => output_x,
-      output_y => output_y,
-      output_valid => output_valid
+      diff_clk => hispi_clk,
+      diff_data => hispi_data,
+      
+      output_clk => clk,
+      output => output,
+      output_flags => output_flags,
+      
+      word_length => 12,
+      row_length => 4608,
+      frame_length => 3288,
+      num_lanes => 4
     );
 end rtl;

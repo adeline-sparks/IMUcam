@@ -13,13 +13,33 @@ package imucam_pkg is
   type unsigned_1d is array(natural range <>) of unsigned;
   type unsigned_2d is array(natural range <>) of unsigned_1d;
   
+  function make_mask(num_ones : natural; len : natural) return std_logic_vector;
+  
   function log2(x : positive) return natural;
   
   function minimum(x : natural; y : natural) return natural;
   function maximum(x : natural; y : natural) return natural;
+  
+  type pixel_flags is record
+    valid : std_logic;
+    start_of_row : std_logic;
+    start_of_frame : std_logic;
+  end record;
+  
+  type diff_pair is record
+    p : std_logic;
+    n : std_logic;
+  end record;
+  
+  type diff_pair_vector is array(natural range <>) of diff_pair;
 end imucam_pkg;
 
 package body imucam_pkg is
+  function make_mask(num_ones : natural; len : natural) return std_logic_vector is
+  begin
+    return std_logic_vector(shift_left(to_unsigned(1, len), num_ones) - 1);
+  end function;
+
   function log2(x : positive) return natural is
   begin
     return natural(ceil(log2(real(x))));
