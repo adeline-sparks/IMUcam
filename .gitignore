@@ -1,1 +1,5 @@
-vhdl/IMUcam.*/
+vhdl/db
+vhdl/incremental_db
+vhdl/output_files
+vhdl/simulation
+vhdl/*.qws

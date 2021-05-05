@@ -4,8 +4,8 @@ use ieee.numeric_std.all;
 use work.imucam_pkg.all;
 use work.hispi_pkg.all;
 
-library xpm;
-use xpm.vcomponents.all;
+library altera_mf;
+use altera_mf.altera_mf_components.all;
 
 entity hispi_fifo is
   generic (
@@ -24,34 +24,30 @@ entity hispi_fifo is
 end hispi_fifo;
 
 architecture rtl of hispi_fifo is
+  constant depth : natural := 2*max_num_lanes + 1;
   signal empty : std_logic;
 begin
-  fifo : xpm_fifo_async
+  fifo : dcfifo
     generic map (
-      FIFO_WRITE_DEPTH => maximum(max_num_lanes + 1, 16),
-      READ_DATA_WIDTH => max_word_length + 2,
-      WRITE_DATA_WIDTH => max_word_length + 2,
-      SIM_ASSERT_CHK => 1,
-      USE_ADV_FEATURES => "0000"
+      lpm_numwords => depth,
+      lpm_width => max_word_length + 2,
+      lpm_widthu => log2(depth),
+      rdsync_delaypipe => 1,
+      wrsync_delaypipe => 1
     )
     port map (
-      din(0) => wr_flags.start_of_frame,
-      din(1) => wr_flags.start_of_row,
-      din(max_word_length + 1 downto 2) => wr_data,
-      wr_clk => wr_clk,
-      wr_en => wr_flags.valid,
+      data(0) => wr_flags.start_of_frame,
+      data(1) => wr_flags.start_of_row,
+      data(max_word_length + 1 downto 2) => wr_data,
+      wrclk => wr_clk,
+      wrreq => wr_flags.valid,
       
-      dout(0) => rd_flags.start_of_frame,
-      dout(1) => rd_flags.start_of_row,
-      dout(max_word_length + 1 downto 2) => rd_data,
-      rd_clk => rd_clk,
-      rd_en => not empty,
-      empty => empty,
-      
-      rst => '0',
-      sleep => '0',
-      injectsbiterr => '0',
-      injectdbiterr => '0'
+      q(0) => rd_flags.start_of_frame,
+      q(1) => rd_flags.start_of_row,
+      q(max_word_length + 1 downto 2) => rd_data,
+      rdclk => rd_clk,
+      rdreq => not empty,
+      rdempty => empty
     );
     
   process (rd_clk) is
