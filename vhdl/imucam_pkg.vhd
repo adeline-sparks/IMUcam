@@ -26,6 +26,8 @@ package imucam_pkg is
     start_of_frame : std_logic;
   end record;
   
+  type pixel_flags_vector is array(natural range <>) of pixel_flags;
+  
   type diff_pair is record
     p : std_logic;
     n : std_logic;
