@@ -5,10 +5,10 @@ use work.imucam_pkg.all;
 
 entity window_buffer is
   generic (
-    data_width : positive := 8;
-    window_width : positive := 3;
-    window_height : positive := 3;
-    max_row_length : positive := 128
+    data_width : positive;
+    window_width : positive;
+    window_height : positive;
+    max_row_length : positive
   );
   port (
     clk : in std_logic;

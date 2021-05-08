@@ -4,28 +4,29 @@ use ieee.numeric_std.all;
 use work.imucam_pkg.all;
 
 entity harris_tensor is
+  generic (
+    input_width : positive;
+    output_width : positive
+  );
   port (
     clk : in std_logic;
-    input_x : in signed;
-    input_y : in signed;
+    input_x : in signed(input_width-1 downto 0);
+    input_y : in signed(input_width-1 downto 0);
     input_valid : in std_logic;
-    output_xx : out signed;
-    output_xy : out signed;
-    output_yy : out signed;
+    output_xx : out signed(output_width-1 downto 0);
+    output_xy : out signed(output_width-1 downto 0);
+    output_yy : out signed(output_width-1 downto 0);
     output_valid : out std_logic
   );
 end harris_tensor;
 
 architecture rtl of harris_tensor is
-  signal temp_xx : signed(input_x'length * 2 - 1 downto 0);
-  signal temp_xy : signed(input_x'length + input_y'length - 1 downto 0);
-  signal temp_yy : signed(input_y'length * 2 - 1 downto 0);
+  constant temp_width : natural := 2 * input_width;
+  signal temp_xx : signed(temp_width-1 downto 0);
+  signal temp_xy : signed(temp_width-1 downto 0);
+  signal temp_yy : signed(temp_width-1 downto 0);
   signal temp_valid : std_logic;
 begin
-  assert input_x'length = input_y'length;
-  assert output_xx'length = output_xy'length;
-  assert output_xx'length = output_yy'length;
-
   process (clk) is
   begin
     if rising_edge(clk) then
@@ -37,6 +38,10 @@ begin
   end process;
   
   round_xx : entity work.round
+    generic map (
+      input_width => temp_width,
+      output_width => output_width
+    )
     port map (
       clk => clk,
       input => temp_xx,
@@ -46,6 +51,10 @@ begin
     );
     
   round_xy : entity work.round
+    generic map (
+      input_width => temp_width,
+      output_width => output_width
+    )
     port map (
       clk => clk,
       input => temp_xy,
@@ -55,6 +64,10 @@ begin
     );
     
   round_yy : entity work.round
+    generic map (
+      input_width => temp_width,
+      output_width => output_width
+    )
     port map (
       clk => clk,
       input => temp_yy,
