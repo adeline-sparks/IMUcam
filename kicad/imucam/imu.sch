@@ -1,0 +1,220 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L imucam:ICM20948 U?
+U 1 1 61423402
+P 4350 3350
+F 0 "U?" H 3850 4000 50  0000 C CNN
+F 1 "ICM20948" H 4750 4000 50  0000 C CNN
+F 2 "" H 4350 3350 50  0001 C CNN
+F 3 "" H 4350 3350 50  0001 C CNN
+	1    4350 3350
+	1    0    0    -1  
+$EndComp
+NoConn ~ 3700 3050
+NoConn ~ 3700 3150
+NoConn ~ 3700 3250
+NoConn ~ 3700 3350
+NoConn ~ 3700 3450
+NoConn ~ 3700 3550
+NoConn ~ 3700 3650
+NoConn ~ 3700 3750
+NoConn ~ 3700 3850
+NoConn ~ 3700 3950
+$Comp
+L power:GND #PWR?
+U 1 1 61424342
+P 4350 4150
+F 0 "#PWR?" H 4350 3900 50  0001 C CNN
+F 1 "GND" H 4355 3977 50  0000 C CNN
+F 2 "" H 4350 4150 50  0001 C CNN
+F 3 "" H 4350 4150 50  0001 C CNN
+	1    4350 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61424BD5
+P 3550 2950
+F 0 "#PWR?" H 3550 2700 50  0001 C CNN
+F 1 "GND" H 3555 2777 50  0000 C CNN
+F 2 "" H 3550 2950 50  0001 C CNN
+F 3 "" H 3550 2950 50  0001 C CNN
+	1    3550 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 2950 3550 2950
+$Comp
+L power:+1V8 #PWR?
+U 1 1 61424F25
+P 4350 2000
+F 0 "#PWR?" H 4350 1850 50  0001 C CNN
+F 1 "+1V8" H 4365 2173 50  0000 C CNN
+F 2 "" H 4350 2000 50  0001 C CNN
+F 3 "" H 4350 2000 50  0001 C CNN
+	1    4350 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 2650 4350 2650
+$Comp
+L Device:C C?
+U 1 1 61425808
+P 4600 2200
+F 0 "C?" H 4715 2246 50  0000 L CNN
+F 1 "100nF" H 4715 2155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4638 2050 50  0001 C CNN
+F 3 "~" H 4600 2200 50  0001 C CNN
+	1    4600 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 614263DB
+P 5050 2200
+F 0 "C?" H 5165 2246 50  0000 L CNN
+F 1 "100nF" H 5165 2155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 5088 2050 50  0001 C CNN
+F 3 "~" H 5050 2200 50  0001 C CNN
+	1    5050 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 2050 4600 2050
+Connection ~ 4350 2050
+Connection ~ 4600 2050
+Wire Wire Line
+	4600 2050 5050 2050
+Wire Wire Line
+	4350 2050 4350 2000
+Wire Wire Line
+	4600 2350 5050 2350
+$Comp
+L power:GND #PWR?
+U 1 1 61426F47
+P 5050 2350
+F 0 "#PWR?" H 5050 2100 50  0001 C CNN
+F 1 "GND" H 5055 2177 50  0000 C CNN
+F 2 "" H 5050 2350 50  0001 C CNN
+F 3 "" H 5050 2350 50  0001 C CNN
+	1    5050 2350
+	1    0    0    -1  
+$EndComp
+Connection ~ 5050 2350
+Wire Wire Line
+	4350 2050 4350 2650
+Connection ~ 4350 2650
+Text GLabel 5100 3450 2    50   BiDi ~ 0
+SDA_1V8
+Text GLabel 5100 3350 2    50   BiDi ~ 0
+SCL_1V8
+Wire Wire Line
+	5050 3350 5100 3350
+Wire Wire Line
+	5050 3450 5100 3450
+$Comp
+L Device:C C?
+U 1 1 61429967
+P 5100 4200
+F 0 "C?" H 5215 4246 50  0000 L CNN
+F 1 "100nF" H 5215 4155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 5138 4050 50  0001 C CNN
+F 3 "~" H 5100 4200 50  0001 C CNN
+	1    5100 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6142BF1F
+P 5100 4350
+F 0 "#PWR?" H 5100 4100 50  0001 C CNN
+F 1 "GND" H 5105 4177 50  0000 C CNN
+F 2 "" H 5100 4350 50  0001 C CNN
+F 3 "" H 5100 4350 50  0001 C CNN
+	1    5100 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5050 3750 5100 3750
+Text GLabel 5100 3150 2    50   Input ~ 0
+IMU_CS
+Text GLabel 5100 2950 2    50   Input ~ 0
+IMU_SI
+Text GLabel 5100 2850 2    50   Input ~ 0
+IMU_SCK
+Text GLabel 5100 3050 2    50   Output ~ 0
+IMU_SO
+Wire Wire Line
+	5050 2850 5100 2850
+Wire Wire Line
+	5050 2950 5100 2950
+Wire Wire Line
+	5050 3050 5100 3050
+Wire Wire Line
+	5050 3150 5100 3150
+NoConn ~ 3700 2850
+Text GLabel 5200 3950 2    50   Output ~ 0
+IMU_INT
+Wire Wire Line
+	5100 3750 5100 4050
+Wire Wire Line
+	5050 3950 5200 3950
+$Comp
+L Connector_Generic:Conn_01x03 J?
+U 1 1 61887C9A
+P 6500 3850
+F 0 "J?" H 6580 3892 50  0000 L CNN
+F 1 "FSYNC_SEL" H 6580 3801 50  0000 L CNN
+F 2 "" H 6500 3850 50  0001 C CNN
+F 3 "~" H 6500 3850 50  0001 C CNN
+	1    6500 3850
+	1    0    0    -1  
+$EndComp
+Text GLabel 6300 3750 0    50   Input ~ 0
+CAM_TRIGGER
+Text GLabel 6300 3950 0    50   Input ~ 0
+CAM_FLASH
+Wire Wire Line
+	5050 3850 5650 3850
+$Comp
+L Device:R R?
+U 1 1 6188A3FB
+P 5650 4200
+F 0 "R?" H 5720 4246 50  0000 L CNN
+F 1 "10k" H 5720 4155 50  0000 L CNN
+F 2 "" V 5580 4200 50  0001 C CNN
+F 3 "~" H 5650 4200 50  0001 C CNN
+	1    5650 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6188AB2A
+P 5650 4350
+F 0 "#PWR?" H 5650 4100 50  0001 C CNN
+F 1 "GND" H 5655 4177 50  0000 C CNN
+F 2 "" H 5650 4350 50  0001 C CNN
+F 3 "" H 5650 4350 50  0001 C CNN
+	1    5650 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 3850 5650 4050
+Connection ~ 5650 3850
+Wire Wire Line
+	5650 3850 6300 3850
+$EndSCHEMATC
