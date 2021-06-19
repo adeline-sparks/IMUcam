@@ -170,7 +170,7 @@ U 1 1 617ACD36
 P 8900 1450
 F 0 "L?" V 8719 1450 50  0000 C CNN
 F 1 "3.3uH" V 8810 1450 50  0000 C CNN
-F 2 "" H 8900 1450 50  0001 C CNN
+F 2 "Inductor_SMD:L_Coilcraft_XxL4020" H 8900 1450 50  0001 C CNN
 F 3 "https://www.coilcraft.com/getmedia/50632d43-da1b-4cdb-8ab4-3029cab51df3/xfl4020.pdf" H 8900 1450 50  0001 C CNN
 	1    8900 1450
 	0    1    1    0   
@@ -347,7 +347,7 @@ U 1 1 6180C75A
 P 8900 2950
 F 0 "L?" V 8719 2950 50  0000 C CNN
 F 1 "3.3uH" V 8810 2950 50  0000 C CNN
-F 2 "" H 8900 2950 50  0001 C CNN
+F 2 "Inductor_SMD:L_Coilcraft_XxL4020" H 8900 2950 50  0001 C CNN
 F 3 "https://www.coilcraft.com/getmedia/50632d43-da1b-4cdb-8ab4-3029cab51df3/xfl4020.pdf" H 8900 2950 50  0001 C CNN
 	1    8900 2950
 	0    1    1    0   
