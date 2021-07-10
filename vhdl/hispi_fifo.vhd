@@ -24,7 +24,7 @@ entity hispi_fifo is
 end hispi_fifo;
 
 architecture rtl of hispi_fifo is
-  constant depth : natural := 2*max_num_lanes + 1;
+  constant depth : natural := max_num_lanes + 1;
   signal empty : std_logic;
 begin
   fifo : dcfifo
