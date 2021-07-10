@@ -3,3 +3,6 @@ vhdl/incremental_db
 vhdl/output_files
 vhdl/simulation
 vhdl/*.qws
+kicad/imucam/fp-info-cache
+*-cache.lib
+*.sch-bak
