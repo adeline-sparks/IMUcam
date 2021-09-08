@@ -173,20 +173,9 @@ Wire Wire Line
 	5100 3750 5100 4050
 Wire Wire Line
 	5050 3950 5200 3950
-$Comp
-L Connector_Generic:Conn_01x03 J3
-U 1 1 61887C9A
-P 6500 3850
-F 0 "J3" H 6580 3892 50  0000 L CNN
-F 1 "FSYNC_SEL" H 6580 3801 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6500 3850 50  0001 C CNN
-F 3 "~" H 6500 3850 50  0001 C CNN
-	1    6500 3850
-	1    0    0    -1  
-$EndComp
-Text GLabel 6300 3750 0    50   Input ~ 0
+Text GLabel 6550 3650 2    50   Input ~ 0
 CAM_SHUTTER
-Text GLabel 6300 3950 0    50   Input ~ 0
+Text GLabel 6550 4050 2    50   Input ~ 0
 CAM_FLASH
 Wire Wire Line
 	5050 3850 5650 3850
@@ -217,4 +206,19 @@ Wire Wire Line
 Connection ~ 5650 3850
 Wire Wire Line
 	5650 3850 6300 3850
+$Comp
+L Jumper:SolderJumper_3_Open JP1
+U 1 1 6140D595
+P 6450 3850
+F 0 "JP1" V 6450 3918 50  0000 L CNN
+F 1 "SolderJumper_3_Open" V 6495 3918 50  0001 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm" H 6450 3850 50  0001 C CNN
+F 3 "~" H 6450 3850 50  0001 C CNN
+	1    6450 3850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6550 3650 6450 3650
+Wire Wire Line
+	6550 4050 6450 4050
 $EndSCHEMATC

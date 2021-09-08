@@ -661,4 +661,6 @@ Text Label 8150 3850 0    50   ~ 0
 CK_P
 Text Label 8150 3950 0    50   ~ 0
 CK_N
+Text Label 7750 2150 0    50   ~ 0
+5V_HDMI
 $EndSCHEMATC
