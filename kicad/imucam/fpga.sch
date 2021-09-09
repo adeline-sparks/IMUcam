@@ -1471,7 +1471,7 @@ U 1 1 60CDECE4
 P 10550 5400
 F 0 "J1" H 10950 5950 50  0000 R CNN
 F 1 "JTAG" H 10350 5950 50  0000 R CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD" H 10550 5400 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical" H 10550 5400 50  0001 C CNN
 F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 10200 4150 50  0001 C CNN
 	1    10550 5400
 	-1   0    0    -1  
