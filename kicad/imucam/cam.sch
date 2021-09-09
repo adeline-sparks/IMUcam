@@ -387,10 +387,7 @@ F 3 "" H 7050 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7000 3000 7050 3000
-Wire Wire Line
 	7000 3300 7050 3300
-Connection ~ 7050 3300
 Wire Wire Line
 	7050 3300 7050 3400
 Text GLabel 5100 2500 0    50   Output ~ 0
@@ -579,16 +576,10 @@ Text GLabel 8000 3100 2    50   Input ~ 0
 CAM_RESET_BAR
 Text GLabel 8000 3200 2    50   Input ~ 0
 CLK_24MHZ
-Text GLabel 7050 2800 2    50   Input ~ 0
-CAM_FLASH
-Text GLabel 7050 2900 2    50   Input ~ 0
-CAM_SHUTTER
 Wire Wire Line
 	7000 2800 7050 2800
 Wire Wire Line
 	7000 2900 7050 2900
-Wire Wire Line
-	7050 3000 7050 3300
 Wire Wire Line
 	7000 3100 7750 3100
 Wire Wire Line
@@ -729,4 +720,30 @@ F 3 "" H 4550 4450 50  0001 C CNN
 	1    4550 4450
 	1    0    0    -1  
 $EndComp
+$Comp
+L imucam:M12Lens H1
+U 1 1 61429870
+P 4750 1000
+F 0 "H1" H 4500 1300 50  0000 L CNN
+F 1 "M12Lens" H 4750 700 50  0001 C CNN
+F 2 "imucam:M12_Lens_20mm" H 4750 600 50  0001 C CNN
+F 3 "" H 4750 1000 50  0001 C CNN
+	1    4750 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L imucam:Arducam_Module H2
+U 1 1 61438A5A
+P 5350 5650
+F 0 "H2" H 5100 6000 50  0000 L CNN
+F 1 "EXTCAM" H 5250 5300 50  0000 C CNN
+F 2 "imucam:Arducam_module_40mm" H 5350 5200 50  0001 C CNN
+F 3 "" H 5350 5650 50  0001 C CNN
+	1    5350 5650
+	1    0    0    -1  
+$EndComp
+Text GLabel 7100 3000 2    50   Input ~ 0
+CAM_TRIGGER
+Wire Wire Line
+	7000 3000 7100 3000
 $EndSCHEMATC

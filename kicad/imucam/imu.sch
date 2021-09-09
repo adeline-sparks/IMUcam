@@ -173,52 +173,8 @@ Wire Wire Line
 	5100 3750 5100 4050
 Wire Wire Line
 	5050 3950 5200 3950
-Text GLabel 6550 3650 2    50   Input ~ 0
-CAM_SHUTTER
-Text GLabel 6550 4050 2    50   Input ~ 0
-CAM_FLASH
 Wire Wire Line
-	5050 3850 5650 3850
-$Comp
-L Device:R R18
-U 1 1 6188A3FB
-P 5650 4200
-F 0 "R18" H 5720 4246 50  0000 L CNN
-F 1 "10k" H 5720 4155 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 5580 4200 50  0001 C CNN
-F 3 "~" H 5650 4200 50  0001 C CNN
-	1    5650 4200
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR063
-U 1 1 6188AB2A
-P 5650 4350
-F 0 "#PWR063" H 5650 4100 50  0001 C CNN
-F 1 "GND" H 5655 4177 50  0000 C CNN
-F 2 "" H 5650 4350 50  0001 C CNN
-F 3 "" H 5650 4350 50  0001 C CNN
-	1    5650 4350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5650 3850 5650 4050
-Connection ~ 5650 3850
-Wire Wire Line
-	5650 3850 6300 3850
-$Comp
-L Jumper:SolderJumper_3_Open JP1
-U 1 1 6140D595
-P 6450 3850
-F 0 "JP1" V 6450 3918 50  0000 L CNN
-F 1 "SolderJumper_3_Open" V 6495 3918 50  0001 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm" H 6450 3850 50  0001 C CNN
-F 3 "~" H 6450 3850 50  0001 C CNN
-	1    6450 3850
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6550 3650 6450 3650
-Wire Wire Line
-	6550 4050 6450 4050
+	5050 3850 5200 3850
+Text GLabel 5200 3850 2    50   Input ~ 0
+CAM_TRIGGER
 $EndSCHEMATC
