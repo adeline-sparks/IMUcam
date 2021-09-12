@@ -4,4 +4,8 @@ $CMP AP2331
 F https://www.mouser.com/datasheet/2/115/AP2331-371188.pdf
 $ENDCMP
 #
+$CMP NTS0308E
+F https://www.nxp.com/docs/en/data-sheet/NTS0308E.pdf
+$ENDCMP
+#
 #End Doc Library

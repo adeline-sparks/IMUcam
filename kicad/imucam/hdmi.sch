@@ -19,7 +19,7 @@ U 1 1 61A33450
 P 6200 4150
 F 0 "U11" H 6650 5250 50  0000 C CNN
 F 1 "PTN3366" H 5800 5250 50  0000 C CNN
-F 2 "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm_ThermalVias" H 6350 4250 50  0001 C CNN
+F 2 "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm" H 6350 4250 50  0001 C CNN
 F 3 "" H 6350 4250 50  0001 C CNN
 	1    6200 4150
 	1    0    0    -1  
@@ -441,12 +441,12 @@ Wire Wire Line
 $Comp
 L power:GND #PWR087
 U 1 1 61B984B1
-P 7200 2550
-F 0 "#PWR087" H 7200 2300 50  0001 C CNN
-F 1 "GND" H 7205 2377 50  0000 C CNN
-F 2 "" H 7200 2550 50  0001 C CNN
-F 3 "" H 7200 2550 50  0001 C CNN
-	1    7200 2550
+P 7200 2600
+F 0 "#PWR087" H 7200 2350 50  0001 C CNN
+F 1 "GND" H 7205 2427 50  0000 C CNN
+F 2 "" H 7200 2600 50  0001 C CNN
+F 3 "" H 7200 2600 50  0001 C CNN
+	1    7200 2600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -475,15 +475,6 @@ F 3 "~" H 7650 2350 50  0001 C CNN
 	1    7650 2350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6550 2500 6550 2550
-Wire Wire Line
-	6550 2550 7200 2550
-Connection ~ 7200 2550
-Wire Wire Line
-	7200 2550 7650 2550
-Wire Wire Line
-	7650 2550 7650 2500
 Wire Wire Line
 	7650 2200 7650 2150
 Connection ~ 7650 2150
@@ -663,4 +654,31 @@ F 3 "" H 3100 4250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 3100 4250
+Wire Wire Line
+	6550 2600 7200 2600
+Wire Wire Line
+	6550 2500 6550 2600
+Wire Wire Line
+	7200 2600 7650 2600
+Wire Wire Line
+	7650 2500 7650 2600
+Connection ~ 7200 2600
+Wire Wire Line
+	7200 2550 7200 2600
+Text Label 5200 3250 0    50   ~ 0
+IN_D1+
+Text Label 5200 3350 0    50   ~ 0
+IN_D1-
+Text Label 5200 3450 0    50   ~ 0
+IN_D2+
+Text Label 5200 3550 0    50   ~ 0
+IN_D2-
+Text Label 5200 3650 0    50   ~ 0
+IN_D3+
+Text Label 5200 3750 0    50   ~ 0
+IN_D3-
+Text Label 5200 3850 0    50   ~ 0
+IN_D4+
+Text Label 5200 3950 0    50   ~ 0
+IN_D4-
 $EndSCHEMATC
