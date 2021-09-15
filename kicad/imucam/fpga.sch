@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L imucam:LIFCL-17-xSG72 U2
+L imucam-rescue:LIFCL-17-xSG72-imucam U2
 U 1 1 60C3BF29
 P 5200 3050
 F 0 "U2" H 4600 -1250 50  0000 C CNN

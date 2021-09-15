@@ -167,7 +167,7 @@ Wire Wire Line
 Text GLabel 5200 3850 2    50   Input ~ 0
 CAM_TRIGGER
 $Comp
-L imucam:ICM20948 U6
+L imucam-rescue:ICM20948-imucam U6
 U 1 1 61423402
 P 4350 3350
 F 0 "U6" H 3850 4000 50  0000 C CNN

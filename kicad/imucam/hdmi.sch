@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L imucam:PTN3366 U11
-U 1 1 61A33450
-P 6200 4150
-F 0 "U11" H 6650 5250 50  0000 C CNN
-F 1 "PTN3366" H 5800 5250 50  0000 C CNN
-F 2 "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm" H 6350 4250 50  0001 C CNN
-F 3 "" H 6350 4250 50  0001 C CNN
-	1    6200 4150
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR085
 U 1 1 61A343C7
 P 6200 5050
@@ -681,4 +670,15 @@ Text Label 5200 3850 0    50   ~ 0
 IN_D4+
 Text Label 5200 3950 0    50   ~ 0
 IN_D4-
+$Comp
+L imucam-rescue:PTN3366-imucam U11
+U 1 1 61A33450
+P 6200 4150
+F 0 "U11" H 6650 5250 50  0000 C CNN
+F 1 "PTN3366" H 5800 5250 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm" H 6350 4250 50  0001 C CNN
+F 3 "" H 6350 4250 50  0001 C CNN
+	1    6200 4150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

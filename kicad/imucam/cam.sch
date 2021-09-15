@@ -318,9 +318,11 @@ EXTCAM_D3_N
 Text GLabel 4150 5950 0    50   Output ~ 0
 EXTCAM_D3_P
 $Comp
-L imucam:54548-2271 J2
+L imucam-rescue:54548-2271-imucam J2
 U 1 1 60CE4657
 P 4550 4450
+AR Path="/60CE4657" Ref="J2"  Part="1" 
+AR Path="/6136B1E7/60CE4657" Ref="J2"  Part="1" 
 F 0 "J2" H 4630 3346 50  0000 L CNN
 F 1 "EXTCAM" H 4630 3255 50  0000 L CNN
 F 2 "imucam:Molex_545482271" H 4550 4450 50  0001 C CNN
@@ -365,7 +367,7 @@ Wire Wire Line
 Wire Wire Line
 	7000 2000 7050 2000
 $Comp
-L imucam:AR0330CM1C00 U5
+L imucam-rescue:AR0330CM1C00-imucam U5
 U 1 1 6136CF1D
 P 6050 2400
 F 0 "U5" H 5300 3550 50  0000 C CNN

@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name imucam)(type Legacy)(uri ${KIPRJMOD}/imucam.lib)(options "")(descr ""))
+  (lib (name imucam-rescue)(type Legacy)(uri ${KIPRJMOD}/imucam-rescue.lib)(options "")(descr ""))
 )

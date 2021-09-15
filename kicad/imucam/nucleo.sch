@@ -590,13 +590,13 @@ Wire Wire Line
 	4250 1800 4100 1800
 Text Notes 4750 1750 0    50   ~ 0
 EXTI15\n
-Text GLabel 3500 2850 0    50   Output ~ 0
-HDMI_OE
-Text GLabel 3500 3250 0    50   Input ~ 0
-HDMI_HPD
 Text GLabel 3500 3350 0    50   Output ~ 0
+HDMI_OE
+Text GLabel 3500 3150 0    50   Input ~ 0
+HDMI_HPD
+Text GLabel 3500 2950 0    50   Output ~ 0
 HDMI_EQ1
-Text GLabel 3500 3150 0    50   Output ~ 0
+Text GLabel 3500 2850 0    50   Output ~ 0
 HDMI_EQ0
 Text GLabel 4150 2350 2    50   Output ~ 0
 EXTCAM_IO0
@@ -727,7 +727,7 @@ Wire Wire Line
 	5250 6600 5000 6600
 Text Label 5000 6600 0    50   ~ 0
 LED3
-Text GLabel 3500 2950 0    50   Output ~ 0
+Text GLabel 3500 3250 0    50   Output ~ 0
 HDMI_DDC_EN
 Connection ~ 4250 7300
 Wire Wire Line
@@ -875,41 +875,41 @@ Wire Wire Line
 	4750 7300 5250 7300
 Text Label 8600 2200 0    50   ~ 0
 IMU_INT_3V3
-Text Label 8600 2600 0    50   ~ 0
+Text Label 8600 2300 0    50   ~ 0
 IMU_SI_3V3
 Text Label 2000 3250 0    50   ~ 0
 IMU_INT_3V3
 Text Label 2000 3050 0    50   ~ 0
 IMU_SO_3V3
-Text GLabel 6950 2000 0    50   BiDi ~ 0
+Text GLabel 6950 2100 0    50   BiDi ~ 0
 SCL_1V8
-Text GLabel 9350 2000 2    50   BiDi ~ 0
-SCL_3V3
 Text GLabel 9350 2100 2    50   BiDi ~ 0
+SCL_3V3
+Text GLabel 9350 2000 2    50   BiDi ~ 0
 SDA_3V3
-Text GLabel 6900 2100 0    50   BiDi ~ 0
+Text GLabel 6950 2000 0    50   BiDi ~ 0
 SDA_1V8
 Text GLabel 7650 2200 0    50   Input ~ 0
 IMU_INT
-Text GLabel 7650 2600 0    50   Output ~ 0
-IMU_SI
-Text Label 8600 2500 0    50   ~ 0
-IMU_SO_3V3
 Text GLabel 7650 2300 0    50   Output ~ 0
+IMU_SI
+Text Label 8600 2400 0    50   ~ 0
+IMU_SO_3V3
+Text GLabel 7650 2600 0    50   Output ~ 0
 IMU_SCK
-Text GLabel 7650 2400 0    50   Output ~ 0
+Text GLabel 7650 2500 0    50   Output ~ 0
 IMU_CS
 Wire Wire Line
 	7700 2300 7650 2300
 Wire Wire Line
 	7700 2400 7650 2400
-Text GLabel 7650 2500 0    50   Input ~ 0
+Text GLabel 7650 2400 0    50   Input ~ 0
 IMU_SO
 Wire Wire Line
 	7700 2500 7650 2500
-Text Label 8600 2300 0    50   ~ 0
+Text Label 8600 2600 0    50   ~ 0
 IMU_SCK_3V3
-Text Label 8600 2400 0    50   ~ 0
+Text Label 8600 2500 0    50   ~ 0
 IMU_CS_3V3
 Text GLabel 4150 2250 2    50   Output ~ 0
 CAM_RESET_BAR
@@ -975,13 +975,13 @@ $EndComp
 Wire Wire Line
 	8550 2200 9300 2200
 Wire Wire Line
-	8550 2300 9300 2300
-Wire Wire Line
-	8550 2400 9300 2400
+	8550 2600 9300 2600
 Wire Wire Line
 	8550 2500 9300 2500
 Wire Wire Line
-	8550 2600 9300 2600
+	8550 2400 9300 2400
+Wire Wire Line
+	8550 2300 9300 2300
 Wire Wire Line
 	8550 2700 9300 2700
 $Comp
@@ -1124,7 +1124,7 @@ Wire Wire Line
 Wire Wire Line
 	6950 2000 7550 2000
 Wire Wire Line
-	6900 2100 7200 2100
+	6950 2100 7200 2100
 Wire Wire Line
 	7550 2000 7550 1800
 Connection ~ 7550 2000
@@ -1185,7 +1185,7 @@ Wire Wire Line
 	1900 3050 2500 3050
 Wire Wire Line
 	1900 3250 2500 3250
-Text Notes 2600 3250 0    50   ~ 0
+Text Notes 2550 3250 0    50   ~ 0
 EXTI3
 Wire Wire Line
 	4100 2350 4150 2350
@@ -1226,7 +1226,6 @@ NoConn ~ 3600 3850
 NoConn ~ 3600 3750
 NoConn ~ 3600 3650
 NoConn ~ 3600 3450
-NoConn ~ 3600 2750
 NoConn ~ 3600 2650
 NoConn ~ 3600 2550
 NoConn ~ 3600 2350
